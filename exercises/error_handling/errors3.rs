@@ -4,15 +4,15 @@
 // Why not? What should we do to fix it?
 // Execute `rustlings hint errors3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
 use std::num::ParseIntError;
 
+// can also change the return type to Result<(), ParseIntError> and return Ok(()) from main
 fn main() {
     let mut tokens = 100;
     let pretend_user_input = "8";
 
-    let cost = total_cost(pretend_user_input)?;
+    let cost = total_cost(pretend_user_input).expect("not a number");
 
     if cost > tokens {
         println!("You can't afford that many!");
